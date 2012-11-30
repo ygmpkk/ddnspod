@@ -7,7 +7,7 @@ DOMAINID=""
 SUBDOMAIN=""
 noupdate="No Update"
 
-CURRIP=`curl -s http://iframe.ip138.com/ic.asp | grep -Eo [0-9]\{1,3\}+\.[0-9]\{1,3\}+\.[0-9]\{1,3\}+\.[0-9]\{1,3\}+ | head -n 1`
+CURRIP=`cat < /dev/tcp/ns1.dnspod.net/6666`
 OLDIP=''
 IPFILE="/var/run/lastip"
 
@@ -19,7 +19,7 @@ if [ -f "$IPFILE" ]; then
     fi
 else
     echo $CURRIP > $IPFILE
-    echo $CURRIP
+#    echo $CURRIP
 fi
 
 if [ "$CURRIP" != "$OLDIP" ]; then
