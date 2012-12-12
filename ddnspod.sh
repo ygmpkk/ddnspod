@@ -7,7 +7,7 @@ DOMAINID=""
 SUBDOMAIN=""
 noupdate="No Update"
 
-CURRIP=`cat < /dev/tcp/ns1.dnspod.net/6666`
+CURRIP=`cat < /dev/tcp/a.dnspod.com/6666`
 OLDIP=''
 IPFILE="/var/run/lastip"
 
